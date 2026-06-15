@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Cadastro de Alunos</h1>
+            <button id="btn-admin-access" class="btn-admin">Acesso Administrativo</button>
+        </header>
+
+        <section class="form-section">
+            <h2 id="form-title">Cadastrar Novo Aluno</h2>
+            <form id="student-form">
+                <input type="hidden" id="student-id">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="ra">RA (Registro do Aluno)</label>
+                    <input type="text" id="ra" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="age">Idade</label>
+                        <input type="number" id="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="class">Turma</label>
+                        <input type="text" id="class" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="course">Curso</label>
+                    <input type="text" id="course" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="btn-save">Salvar</button>
+                    <button type="button" id="btn-cancel" class="hidden">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <h2>Lista de Alunos</h2>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Pesquisar por nome ou RA...">
+            </div>
+            <div class="table-container">
+                <table id="students-table">
+                    <thead>
+                        <tr>
+                            <th>RA</th>
+                            <th>Nome</th>
+                            <th>Idade</th>
+                            <th>Turma</th>
+                            <th>Curso</th>
+                            <th>E-mail</th>
+                            <th class="admin-only hidden">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="students-list">
+                        <!-- Os dados serão inseridos via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Modal de Senha -->
+        <div id="password-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Acesso Restrito</h3>
+                <p>Digite a senha para gerenciar alunos:</p>
+                <input type="password" id="admin-password" placeholder="Senha">
+                <div class="modal-actions">
+                    <button id="btn-confirm-password">Entrar</button>
+                    <button id="btn-close-modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="message" class="message hidden"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
