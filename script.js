@@ -158,7 +158,6 @@ searchInput.addEventListener('input', (e) => {
     renderStudents(filtered);
 });
 
-// Admin Access Logic
 btnAdminAccess.addEventListener('click', () => {
     if (isAdmin) {
         isAdmin = false;
